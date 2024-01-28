@@ -41,7 +41,7 @@ export default function Home() {
                   foodName={filterItem.name}
                   foodItem={filterItem}
                   ImgSrc={filterItem.image}
-                  options={filterItem.options[0]}
+                  description={filterItem.description}
                 />
               </div>
             ))
