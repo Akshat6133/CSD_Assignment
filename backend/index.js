@@ -7,22 +7,22 @@ const port = 5000
 const mongoDB = require("./db")
 app.use(cors());
 
-app.use((req,res,next) => {
-  res.setHeader("Access-Control-Allow-Origin",`${window.location.origin}`);
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-})
+// app.use((req,res,next) => {
+//   res.setHeader("Access-Control-Allow-Origin",`${window.location.origin}`);
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// })
 
 
 app.use(express.json());
 
-// app.get('/', (req, res) => {
-  // res.send("Working");
-  // res.redirect('/user');
-// });
+app.get('/', (req, res) => {
+  res.send("Working");
+  res.redirect('/user');
+});
 
 app.get('/user', (req, res) => {
   res.send('Hello World!');
