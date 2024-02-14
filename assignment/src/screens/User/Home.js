@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Card_shop from '../../components/User/card_shop';
 import Carousel from '../../components/User/carousel';
 import Footer from '../../components/User/Footer';
 import Navbar from '../../components/User/Navbar';
 import './Home.css';
-import axios from 'axios';
+
 export default function Home() {
   const [search, setSearch] = useState('');
   const [shops, setShops] = useState([]);
@@ -13,14 +14,12 @@ export default function Home() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await axios(`https://csd-assignment-ngjn.vercel.app/api/ShopData`, {
-          method: 'GET',
+        const response = await axios.get('https://csd-assignment-ngjn.vercel.app/api/ShopData', {
           headers: {
             'Content-Type': 'application/json',
           },
         });
-        const data = await response.json();
-        setShops(data[0]);
+        setShops(response.data[0]);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
