@@ -1,7 +1,7 @@
 # CSD_Assignment
 
 ## NOTE: this repo is a fork created for deployment purposes & testing of deployed version which contains the commits mainly related to deploymnet & testing of the backend and frontend on the vercel service 
-to visit the original repo visit:
+to visit the original repo:
     https://github.com/sribhargav1345/CSD_Assignment
 
 
