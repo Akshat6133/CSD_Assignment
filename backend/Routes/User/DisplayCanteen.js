@@ -12,16 +12,17 @@ router.get("/",(req,res)=>{
 
 router.get('/shopData', async (req, res) => {
     // res.send("INVOKED");
-    try {
+    res.send(global.shops);
+    // try {
 
-        const shops = mongoose.connection.db.collection("Canteen");                             
-        const shopdata = await shops.find({}).toArray();
+    //     const shops = mongoose.connection.db.collection("Canteen");                             
+    //     const shopdata = await shops.find({}).toArray();
 
-        res.send([shopdata]);
-    } catch (error) {
-        console.error(error.message);
-        res.status(500).send("Server Error");
-    }
+    //     res.send([shopdata]);
+    // } catch (error) {
+    //     console.error(error.message);
+    //     res.status(500).send("Server Error");
+    // }
 });
 
 module.exports = router;
