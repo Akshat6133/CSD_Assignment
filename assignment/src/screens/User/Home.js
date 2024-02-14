@@ -5,7 +5,7 @@ import Carousel from '../../components/User/carousel';
 import Footer from '../../components/User/Footer';
 import Navbar from '../../components/User/Navbar';
 import './Home.css';
-import axios from 'axios'
+import axios from 'axios';
 export default function Home() {
   const [search, setSearch] = useState('');
   const [shops, setShops] = useState([]);
