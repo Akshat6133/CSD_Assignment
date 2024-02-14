@@ -5,7 +5,7 @@ import Carousel from '../../components/User/carousel';
 import Footer from '../../components/User/Footer';
 import Navbar from '../../components/User/Navbar';
 import './Home.css';
-
+import axios from 'axios'
 export default function Home() {
   const [search, setSearch] = useState('');
   const [shops, setShops] = useState([]);
@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch(`https://csd-assignment-ngjn.vercel.app/api/ShopData`, {
+        const response = await axios(`https://csd-assignment-ngjn.vercel.app/api/ShopData`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
