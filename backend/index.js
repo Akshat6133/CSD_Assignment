@@ -5,6 +5,9 @@ const cors = require('cors');
 const port = 5000
 
 const mongoDB = require("./db")
+
+const DisplayCanteen = require("./Routes/User/DisplayCanteen.js");
+
 app.use(cors());
 
 // app.use((req,res,next) => {
@@ -16,19 +19,22 @@ app.use(cors());
 //   next();
 // })
 
+mongoDB();
+
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send("Working");
-  res.redirect('/user');
-});
+app.use("/",  DisplayCanteen);
+
+// app.get('/', (req, res) => {
+//   res.send("Working");
+//   res.redirect('/user');
+// });
 
 app.get('/user', (req, res) => {
   res.send('Hello World!');
 });
 
-mongoDB();
 
 // Shop_Owner Part
 app.use('/api', require("./Routes/Shop_Owner/CreateAdmin"));

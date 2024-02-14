@@ -6,7 +6,12 @@ const router = express.Router();
 
 const Canteen = require('../../models/Canteen');
 
+router.get("/",(req,res)=>{
+    res.send("HEllo INVOKED");
+})
+
 router.get('/shopData', async (req, res) => {
+    // res.send("INVOKED");
     try {
 
         const shops = mongoose.connection.db.collection("Canteen");                             
