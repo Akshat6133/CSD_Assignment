@@ -19,10 +19,10 @@ app.use((req,res,next) => {
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send("Working");
+// app.get('/', (req, res) => {
+  // res.send("Working");
   // res.redirect('/user');
-});
+// });
 
 app.get('/user', (req, res) => {
   res.send('Hello World!');
