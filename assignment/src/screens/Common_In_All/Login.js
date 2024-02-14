@@ -16,13 +16,13 @@ export default function Login() {
     let apiUrl = "";
 
     if (credentials.userType === "user") {
-      apiUrl = "http://localhost:5000/api/loginUser";
+      apiUrl = "https://csd-assignment-ngjn.vercel.app/api/loginUser";
     } else if (credentials.userType === "admin") {
       if (credentials.email === "sribhargavof03@gmail.com" || credentials.email === "mitulvardhan@iitbhilai.ac.in") {
-        apiUrl = "http://localhost:5000/api/loginSuperAdmin";
+        apiUrl = "https://csd-assignment-ngjn.vercel.app/api/loginSuperAdmin";
         console.log("I'm a SuperAdmin");
       } else {
-        apiUrl = "http://localhost:5000/api/loginAdmin";
+        apiUrl = "https://csd-assignment-ngjn.vercel.app/loginAdmin";
         console.log("I'm an admin");
       }
     }
@@ -48,8 +48,8 @@ export default function Login() {
 
     //console.log(json.authToken);
 
-    if (apiUrl === "http://localhost:5000/api/loginAdmin") {
-      const ownersResponse = await fetch("http://localhost:5000/api/owners");
+    if (apiUrl === "https://csd-assignment-ngjn.vercel.app/api/loginAdmin") {
+      const ownersResponse = await fetch("https://csd-assignment-ngjn.vercel.app/api/owners");
       const ownersData = await ownersResponse.json();
 
       for (const ownerArray of ownersData) {
@@ -61,7 +61,7 @@ export default function Login() {
           }
         }
       }
-    } else if (apiUrl === "http://localhost:5000/api/loginSuperAdmin") {
+    } else if (apiUrl === "https://csd-assignment-ngjn.vercel.app/api/loginSuperAdmin") {
       navigate('/superadmin');
       return;
     }
