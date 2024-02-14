@@ -20,7 +20,8 @@ app.use((req,res,next) => {
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.redirect('/user');
+  res.send("Working");
+  // res.redirect('/user');
 });
 
 app.get('/user', (req, res) => {
