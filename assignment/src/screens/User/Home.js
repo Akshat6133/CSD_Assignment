@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch(`https://csd-assignment-ngjn.vercel.app/api/shopData`, {
+        const response = await fetch(`https://csd-assignment-ngjn.vercel.app/api/ShopData`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
