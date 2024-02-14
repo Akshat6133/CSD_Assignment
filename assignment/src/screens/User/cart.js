@@ -1,5 +1,5 @@
 import React from 'react'
-import Delete from '@material-ui/icons/Delete'
+// import Delete from '@material-ui/icons/Delete'
 import { useCart, useDispatchCart } from '../../components/User/ContextReducer';
 
 export default function Cart() {
@@ -69,7 +69,12 @@ export default function Cart() {
                 <td>{food.qty}</td>
                 <td>{food.size}</td>
                 <td>{food.price}</td>
-                <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </td></tr>
+                <td >
+                  <button type="button" className="btn p-0">
+                    {/* <Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /> */}
+                  </button> 
+                </td>
+                </tr>
             ))}
           </tbody>
         </table>
